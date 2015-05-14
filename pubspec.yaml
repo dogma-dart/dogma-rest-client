@@ -1,0 +1,6 @@
+name: dogma_rest_client
+version: 0.0.1
+description: RESTful HTTP client for Dart.
+dev_dependencies:
+  coverage: any
+  test: any
