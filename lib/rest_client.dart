@@ -3,7 +3,7 @@
 // Use of this source code is governed by a zlib license that can be found in
 // the LICENSE file.
 
-library dogma.rest_client;
+library dogma_rest_client.rest_client;
 
 export 'src/message.dart';
 export 'src/middleware.dart';
