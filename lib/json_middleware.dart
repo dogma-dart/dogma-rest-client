@@ -3,7 +3,7 @@
 // Use of this source code is governed by a zlib license that can be found in
 // the LICENSE file.
 
-library dogma_rest_client.token_middleware;
+library dogma_rest_client.json_middleware;
 
 //---------------------------------------------------------------------
 // Standard libraries
