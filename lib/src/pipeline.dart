@@ -12,7 +12,7 @@ import 'request.dart';
 import 'response.dart';
 
 class Pipeline {
-  final List<Middleware> _middlewares = new List<Middleware>();
+  final List<Middleware> _middlewares = <Middleware>[];
 
   void addMiddleware(Middleware middleware) {
     _middlewares.add(middleware);

@@ -10,8 +10,8 @@ library dogma_rest_client.src.message;
 //---------------------------------------------------------------------
 
 class Message {
-  final Map<String, String> headers = new Map<String, String>();
-  final Map<String, dynamic> context = new Map<String, dynamic>();
+  final Map<String, String> headers = <String, String>{};
+  final Map<String, dynamic> context = <String, dynamic>{};
   Uri url;
   dynamic body;
 }

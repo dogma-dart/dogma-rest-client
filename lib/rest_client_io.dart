@@ -29,7 +29,7 @@ class RestClientIo extends RestClient {
   @override
   Future<Response> makeRequest(Request request) async {
     // Open the request
-    var httpClientRequest = await _httpClient.openUrl(request.method, request.url) as HttpClientRequest;
+    var httpClientRequest = await _httpClient.openUrl(request.method, request.url);
 
     // Set the headers
     var requestHeaders = httpClientRequest.headers;
@@ -38,7 +38,7 @@ class RestClientIo extends RestClient {
       requestHeaders.set(header, value);
     });
 
-    var httpClientResponse = await httpClientRequest.close() as HttpClientResponse;
+    var httpClientResponse = await httpClientRequest.close();
 
     print(httpClientResponse.statusCode);
 

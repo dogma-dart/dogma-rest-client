@@ -5,6 +5,10 @@
 
 library dogma_rest_client.rest_client;
 
+//---------------------------------------------------------------------
+// Exports
+//---------------------------------------------------------------------
+
 export 'src/message.dart';
 export 'src/middleware.dart';
 export 'src/pipeline.dart';

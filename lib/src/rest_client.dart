@@ -16,7 +16,6 @@ import 'dart:async';
 //---------------------------------------------------------------------
 
 import 'pipeline.dart';
-import 'middleware.dart';
 import 'request.dart';
 import 'response.dart';
 
@@ -26,6 +25,9 @@ import 'response.dart';
 
 abstract class RestClient {
   final Pipeline pipeline = new Pipeline();
+
+  /// Performs the logic to make the [request].
+  Future<Response> makeRequest(Request request);
 
   Future<dynamic> open(Uri url, String method) async {
     // Create the request
@@ -45,7 +47,4 @@ abstract class RestClient {
     // Return the response body
     return response.body;
   }
-
-  /// Performs the logic to make the [request].
-  Future<Response> makeRequest(Request request);
 }

@@ -43,5 +43,6 @@ class _Middleware implements Middleware {
   }
 }
 
-Middleware middleware({requestHandler, responseHandler})
+Middleware middleware({RequestHandler requestHandler,
+                       ResponseHandler responseHandler})
     => new _Middleware(requestHandler, responseHandler);
