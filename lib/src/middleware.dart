@@ -16,12 +16,12 @@ import 'response.dart';
 // Library contents
 //---------------------------------------------------------------------
 
-typedef Request RequestHandler(Request request);
-typedef Response ResponseHandler(Response response);
+typedef RequestHandler(Request request);
+typedef ResponseHandler(Response response);
 
 class Middleware {
-  Request request(Request request) => request;
-  Response response(Response response) => response;
+  request(Request request) => request;
+  response(Response response) => response;
 }
 
 class _Middleware implements Middleware {
@@ -30,12 +30,14 @@ class _Middleware implements Middleware {
 
   _Middleware(this._requestHandler, this._responseHandler);
 
+  @override
   Request request(Request request) {
     return _requestHandler != null
         ? _requestHandler(request)
         : request;
   }
 
+  @override
   Response response(Response response) {
     return _responseHandler != null
         ? _responseHandler(response)
