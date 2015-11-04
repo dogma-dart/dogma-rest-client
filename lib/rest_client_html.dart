@@ -31,12 +31,22 @@ class RestClientHtml extends RestClient {
     // Listen for events
     httpRequest.onReadyStateChange.listen((evt) {
       if (httpRequest.readyState == HttpRequest.DONE) {
-        completer.complete(new Response());
+        var response = new Response()
+            ..body = httpRequest.responseText;
+
+        completer.complete(response);
       }
     });
 
-    // Open and send the request
+    // Open the request
     httpRequest.open(request.method, request.url.toString());
+
+    // Set the headers
+    request.headers.forEach((header, value) {
+      httpRequest.setRequestHeader(header, value);
+    });
+
+    // Send the request
     httpRequest.send();
 
     return completer.future;
